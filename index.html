@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Pethouse | Guardería y Peluquería Canina</title>
+
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:#ffffff;
+      overflow-x:hidden;
+      color:#2d2240;
+    }
+
+    :root{
+      --primary:#b889f5;
+      --secondary:#e8d6ff;
+      --dark:#6e45b8;
+      --white:#ffffff;
+      --light:#faf7ff;
+      --shadow:0 10px 40px rgba(184,137,245,.25);
+    }
+
+    /* ========================= */
+    /* NAVBAR */
+    /* ========================= */
+
+    header{
+      position:fixed;
+      width:100%;
+      top:0;
+      z-index:1000;
+      backdrop-filter:blur(15px);
+      background:rgba(255,255,255,.7);
+      border-bottom:1px solid rgba(184,137,245,.15);
+      transition:.4s;
+    }
+
+    .navbar{
+      width:100%;
+      max-width:1400px;
+      margin:auto;
+      padding:20px 5%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    .logo-container{
+      display:flex;
+      align-items:center;
+    }
+
+    .main-logo{
+      width:220px;
+      object-fit:contain;
+      transition:.4s;
+    }
+
+    .main-logo:hover{
+      transform:scale(1.05);
+    }
+
+    .nav-links{
+      display:flex;
+      gap:35px;
+    }
+
+    .nav-links a{
+      text-decoration:none;
+      color:#444;
+      font-weight:500;
+      transition:.4s;
+      position:relative;
+    }
+
+    .nav-links a::after{
+      content:'';
+      position:absolute;
+      width:0%;
+      height:2px;
+      background:var(--primary);
+      left:0;
+      bottom:-6px;
+      transition:.4s;
+    }
+
+    .nav-links a:hover::after{
+      width:100%;
+    }
+
+    .nav-links a:hover{
+      color:var(--dark);
+    }
+
+    .btn{
+      padding:15px 30px;
+      border:none;
+      border-radius:50px;
+      cursor:pointer;
+      font-weight:600;
+      font-size:1rem;
+      transition:.4s;
+      background:linear-gradient(135deg,var(--primary),var(--dark));
+      color:white;
+      box-shadow:var(--shadow);
+    }
+
+    html{
+    scroll-behavior:smooth;
+    }
+
+    .btn-primary{
+       background:#b889f5;
+       color:white;
+        padding:16px 30px;
+        border-radius:40px;
+        text-decoration:none;
+       display:inline-block;
+       border:none;
+        cursor:pointer;
+      }
+
+    .btn:hover{
+      transform:translateY(-5px) scale(1.04);
+    }
+
+    .btn-secondary{
+      background:white;
+      color:var(--dark);
+      border:2px solid var(--primary);
+    }
+    .btn-navbar{
+    background:#b889f5;
+    color:white;
+    border:none;
+    padding:14px 28px;
+    border-radius:40px;
+    cursor:pointer;
+    text-decoration:none;
+    display:inline-block;
+    }
+
+    /* ========================= */
+    /* HERO */
+    /* ========================= */
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      padding:150px 5% 80px;
+      background:
+      radial-gradient(circle at top left,#f3e6ff 10%,transparent 35%),
+      radial-gradient(circle at bottom right,#ecd8ff 10%,transparent 35%),
+      white;
+    }
+
+    .hero-container{
+      max-width:1400px;
+      margin:auto;
+      width:100%;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:60px;
+      align-items:center;
+    }
+
+    .hero-text h1{
+      font-size:5rem;
+      line-height:1.1;
+      color:var(--dark);
+      margin-bottom:25px;
+    }
+
+    .hero-text h1 span{
+      color:var(--primary);
+    }
+
+    .hero-text p{
+      font-size:1.15rem;
+      line-height:1.9;
+      color:#555;
+      margin-bottom:40px;
+      max-width:600px;
+    }
+
+    .hero-buttons{
+      display:flex;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .hero-image{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      position:relative;
+    }
+
+    .hero-image img{
+      width:100%;
+      max-width:620px;
+      animation:float 5s ease-in-out infinite;
+      filter:drop-shadow(0 25px 35px rgba(184,137,245,.35));
+      border-radius:40px;
+    }
+
+    @keyframes float{
+      0%{
+        transform:translateY(0px);
+      }
+      50%{
+        transform:translateY(-20px);
+      }
+      100%{
+        transform:translateY(0px);
+      }
+    }
+
+    /* ========================= */
+    /* SERVICES */
+    /* ========================= */
+
+    html{
+    scroll-behavior:smooth;
+    }
+    
+    .services{
+      padding:120px 5%;
+      background:var(--light);
+    }
+
+    .tienda-menu{
+    padding:120px 5%;
+    background:#faf7ff;
+    text-align:center;
+    }
+
+    .tienda-buttons{
+
+      margin-top:50px;
+
+      display:flex;
+
+      justify-content:center;
+
+      gap:30px;
+
+      flex-wrap:wrap;
+    }
+    
+
+    .categoria-btn{
+
+      background:white;
+
+     color:#6e45b8;
+
+     text-decoration:none;
+ 
+     font-size:1.2rem;
+
+     font-weight:700;
+
+     padding:25px 45px;
+
+     border-radius:25px;
+
+     box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+     transition:.4s;
+    }
+
+    .categoria-btn:hover{
+
+     background:#b889f5;
+ 
+     color:white;
+
+     transform:translateY(-8px);
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:70px;
+    }
+
+    .section-title h2{
+      font-size:3rem;
+      color:var(--dark);
+      margin-bottom:15px;
+    }
+
+    .section-title p{
+      color:#666;
+      line-height:1.8;
+      max-width:700px;
+      margin:auto;
+    }
+
+
+    .services-grid{
+      max-width:1400px;
+      margin:auto;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:35px;
+    }
+
+    .service-card{
+      background:white;
+      border-radius:30px;
+      padding:40px;
+      transition:.5s;
+      position:relative;
+      overflow:hidden;
+      box-shadow:0 10px 30px rgba(0,0,0,.06);
+    }
+
+    .service-card:hover{
+      transform:translateY(-12px);
+      box-shadow:0 25px 50px rgba(184,137,245,.25);
+    }
+
+    .service-card::before{
+      content:'';
+      position:absolute;
+      width:180px;
+      height:180px;
+      background:rgba(184,137,245,.12);
+      border-radius:50%;
+      top:-60px;
+      right:-60px;
+    }
+
+    .icon{
+      width:85px;
+      height:85px;
+      border-radius:25px;
+      background:linear-gradient(135deg,var(--secondary),var(--primary));
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      font-size:2rem;
+      margin-bottom:25px;
+      color:white;
+    }
+
+    .service-card h3{
+      font-size:1.9rem;
+      margin-bottom:15px;
+      color:var(--dark);
+    }
+
+    .service-card p{
+      line-height:1.9;
+      color:#666;
+      margin-bottom:20px;
+    }
+
+    .service-card ul{
+      list-style:none;
+    }
+
+    .service-card ul li{
+      margin-bottom:12px;
+      color:#555;
+      font-weight:500;
+    }
+
+    /* ========================= */
+    /* GALLERY */
+    /* ========================= */
+
+    .gallery{
+      padding:120px 5%;
+      background:white;
+    }
+
+    .gallery-grid{
+      max-width:1400px;
+      margin:auto;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:25px;
+    }
+
+    .gallery-item{
+      overflow:hidden;
+      border-radius:25px;
+      position:relative;
+      cursor:pointer;
+    }
+
+    .gallery-item img{
+      width:100%;
+      height:350px;
+      object-fit:cover;
+      transition:.6s;
+    }
+
+    .gallery-item:hover img{
+      transform:scale(1.15);
+    }
+
+    .overlay{
+      position:absolute;
+      inset:0;
+      background:linear-gradient(to top,rgba(110,69,184,.85),transparent);
+      display:flex;
+      align-items:flex-end;
+      padding:25px;
+      opacity:0;
+      transition:.5s;
+    }
+
+    .gallery-item:hover .overlay{
+      opacity:1;
+    }
+
+    .overlay h4{
+      color:white;
+      font-size:1.4rem;
+    }
+    
+    .shop-section .product-card img{
+
+    width:25%;
+
+    height:400px;
+
+    object-fit:cover;
+
+    display:block;
+
+    }
+
+    /* ========================= */
+    /* CTA */
+    /* ========================= */
+
+    .cta{
+      padding:120px 5%;
+      background:linear-gradient(135deg,#d9b8ff,#b889f5);
+      text-align:center;
+      color:white;
+    }
+
+    .cta h2{
+      font-size:3.5rem;
+      margin-bottom:25px;
+    }
+
+    .cta p{
+      max-width:800px;
+      margin:auto;
+      line-height:1.9;
+      margin-bottom:40px;
+      font-size:1.1rem;
+    }
+
+    .cta .btn{
+      background:white;
+      color:var(--dark);
+    }
+
+    /* ========================= */
+    /* CONTACT */
+    /* ========================= */
+
+    .contact{
+      padding:120px 5%;
+      background:white;
+    }
+
+    .contact-container{
+      max-width:1300px;
+      margin:auto;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:50px;
+      align-items:center;
+    }
+
+    .contact-info h2{
+      font-size:3rem;
+      color:var(--dark);
+      margin-bottom:25px;
+    }
+
+    .contact-info p{
+      line-height:1.9;
+      color:#666;
+      margin-bottom:35px;
+    }
+
+    .info-box{
+      display:flex;
+      gap:20px;
+      align-items:center;
+      margin-bottom:25px;
+    }
+
+    .info-icon{
+      width:65px;
+      height:65px;
+      border-radius:20px;
+      background:var(--secondary);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      font-size:1.5rem;
+    }
+
+    .contact-form{
+      background:var(--light);
+      padding:50px;
+      border-radius:35px;
+      box-shadow:var(--shadow);
+    }
+
+    .input-group{
+      margin-bottom:20px;
+    }
+
+    .contact-form input,
+    .contact-form textarea{
+      width:100%;
+      padding:18px;
+      border:none;
+      outline:none;
+      border-radius:18px;
+      background:white;
+      font-size:1rem;
+    }
+
+    textarea{
+      min-height:150px;
+      resize:none;
+    }
+
+    /* ========================= */
+    /* FOOTER */
+    /* ========================= */
+
+    footer{
+      background:#2d2240;
+      color:white;
+      text-align:center;
+      padding:40px 5%;
+    }
+
+    footer h3{
+      font-size:2rem;
+      margin-bottom:15px;
+    }
+
+    footer p{
+      opacity:.8;
+      line-height:1.8;
+    }
+
+    /* ========================= */
+    /* ANIMATIONS */
+    /* ========================= */
+
+    .reveal{
+      opacity:0;
+      transform:translateY(80px);
+      transition:1s;
+    }
+
+    .reveal.active{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    /* ========================= */
+    /* RESPONSIVE */
+    /* ========================= */
+
+    @media(max-width:1100px){
+
+      .hero-container,
+      .contact-container{
+        grid-template-columns:1fr;
+      }
+
+      .hero-text{
+        text-align:center;
+      }
+
+      .hero-text p{
+        margin:auto auto 35px;
+      }
+
+      .hero-buttons{
+        justify-content:center;
+      }
+
+      .hero-text h1{
+        font-size:4rem;
+      }
+
+    }
+
+    @media(max-width:768px){
+
+      .nav-links{
+        display:none;
+      }
+
+      .hero-text h1{
+        font-size:3rem;
+      }
+
+      .section-title h2{
+        font-size:2.3rem;
+      }
+
+      .cta h2{
+        font-size:2.5rem;
+      }
+
+      .main-logo{
+        width:180px;
+      }
+
+      html{
+        scroll-behavior:smooth;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- ========================= -->
+  <!-- NAVBAR -->
+  <!-- ========================= -->
+
+  <header>
+
+    <nav class="navbar">
+
+      <div class="logo-container">
+        <img src="images/logoo.png" alt="Pethouse Logo" class="main-logo">
+      </div>
+
+      <div class="nav-links">
+        <a href="#inicio">Inicio</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#galeria">Tienda</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+
+      <a href="#contacto">
+    <button class="btn-primary">
+        Reserva ahora
+    </button>
+</a>
+
+    </nav>
+
+  </header>
+
+  <!-- ========================= -->
+  <!-- HERO -->
+  <!-- ========================= -->
+
+  <section class="hero" id="inicio">
+
+    <div class="hero-container">
+
+      <div class="hero-text reveal">
+
+        <h1>
+          Bienvenido a
+          <span>Pethouse</span>
+        </h1>
+
+        <p>
+          La experiencia premium para perros más elegante y moderna.
+          Guardería canina, peluquería profesional y ropa exclusiva
+          para consentir a tu mascota con estilo.
+        </p>
+
+        <div class="hero-buttons">
+
+          <a href="#servicios">
+            <button class="btn">
+              Explorar Servicios
+            </button>
+          </a>
+
+          <a href="#galeria">
+            <button class="btn btn-secondary">
+              Ver Tienda
+            </button>
+          </a>
+
+        </div>
+
+      </div>
+
+      <div class="hero-image reveal">
+
+        <img src="images/portada.png">
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ========================= -->
+  <!-- SERVICES -->
+  <!-- ========================= -->
+
+  <section class="services" id="servicios">
+
+    <div class="section-title reveal">
+
+      <h2>
+        Nuestros Servicios
+      </h2>
+
+      <p>
+        Todo lo que tu perro necesita en un solo lugar.
+      </p>
+
+    </div>
+
+    <div class="services-grid">
+
+      <!-- CARD 1 -->
+
+      <div class="service-card reveal">
+
+        <div class="icon">🐶</div>
+
+        <h3>Guardería Canina</h3>
+
+        <p>
+          Espacios cómodos y seguros donde tu perro podrá jugar,
+          descansar y socializar.
+        </p>
+
+        <ul>
+          <li>✔ Juegos interactivos</li>
+          <li>✔ Supervisión 24/7</li>
+          <li>✔ Espacios climatizados</li>
+          <li>✔ Atención premium</li>
+        </ul>
+
+      </div>
+
+      <!-- CARD 2 -->
+
+      <div class="service-card reveal">
+
+        <div class="icon">✂️</div>
+
+        <h3>Peluquería Canina</h3>
+
+        <p>
+          Cortes modernos y tratamientos especiales para el cuidado
+          del pelaje de tu mascota.
+        </p>
+
+        <ul>
+          <li>✔ Baños premium</li>
+          <li>✔ Corte profesional</li>
+          <li>✔ Spa relajante</li>
+          <li>✔ Productos naturales</li>
+        </ul>
+
+      </div>
+
+      <!-- CARD 3 -->
+
+      <div class="service-card reveal">
+
+        <div class="icon">🧥</div>
+
+        <h3>Ropa y Accesorios</h3>
+
+        <p>
+          Moda canina exclusiva con prendas modernas y cómodas
+          para cada temporada.
+        </p>
+
+        <ul>
+          <li>✔ Hoodies</li>
+          <li>✔ Collares premium</li>
+          <li>✔ Accesorios modernos</li>
+          <li>✔ Diseños exclusivos</li>
+        </ul>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ========================= -->
+  <!-- GALLERY -->
+  <!-- ========================= -->
+
+
+
+    <section class="gallery" id="galeria">
+
+    <div class="section-title reveal">
+
+        <span>Tienda Pethouse</span>
+
+        <h2>Tienda Pethouse</h2>
+
+        <p>
+            Explora nuestros servicios y productos.
+        </p>
+
+    </div>
+
+    <div class="tienda-buttons">
+      <div class="tienda-buttons">
+
+    <a href="#guarderia" class="categoria-btn">
+        🐶 Guardería Premium
+    </a>
+
+    <a href="#peluqueria" class="categoria-btn">
+        ✂️ Peluquería Profesional
+    </a>
+
+    <a href="#moda" class="categoria-btn">
+        🧥 Moda Canina
+    </a>
+
+</div>
+
+    </div>
+
+</section>
+<section class="shop-section" id="guarderia">
+
+    <div class="section-title">
+
+        <span>GUARDERÍA</span>
+
+        <h2>Planes de Guardería</h2>
+
+        <p>
+            Cuidado seguro y divertido para tu mascota.
+        </p>
+
+    </div>
+
+    <div class="shop-grid">
+
+        <div class="product-card">
+
+            <img src="images/mediodia.png">
+
+            <h3>Medio Día</h3>
+
+            <p>4 horas de cuidado.</p>
+
+            <span>$14.990</span>
+
+            <button class="buy-btn add-cart">
+                Agregar al carrito
+            </button>
+
+        </div>
+
+        <div class="product-card">
+
+            <img src="images/dia completo.png">
+
+            <h3>Día Completo</h3>
+
+            <p>8 horas de diversión.</p>
+
+            <span>$24.990</span>
+
+            <button class="buy-btn add-cart">
+                Agregar al carrito
+            </button>
+
+        </div>
+
+        <div class="product-card">
+
+            <img src="images/plan semanal.png">
+
+            <h3>Plan Semanal</h3>
+
+            <p>5 días de guardería.</p>
+
+            <span>$99.990</span>
+
+            <button class="buy-btn add-cart">
+                Agregar al carrito
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+<section class="shop-section" id="peluqueria">
+
+    <div class="section-title">
+
+        <span>PELUQUERÍA</span>
+
+        <h2>Servicios de Belleza</h2>
+
+        <p>
+            Mantén a tu mascota siempre impecable.
+        </p>
+
+    </div>
+
+    <div class="shop-grid">
+
+        <div class="product-card">
+
+            <img src="images/baño.png">
+
+            <h3>Baño Premium</h3>
+
+            <p>Limpieza profunda.</p>
+
+            <span>$12.990</span>
+
+            <button class="buy-btn add-cart">
+                Agregar al carrito
+            </button>
+
+        </div>
+
+        <div class="product-card">
+
+            <img src="images/corte.png">
+
+            <h3>Corte Profesional</h3>
+
+            <p>Estilo personalizado.</p>
+
+            <span>$17.990</span>
+
+            <button class="buy-btn add-cart">
+                Agregar al carrito
+            </button>
+
+        </div>
+
+        <div class="product-card">
+
+            <img src="images/spa.png">
+
+            <h3>Spa Canino</h3>
+
+            <p>Relajación completa.</p>
+
+            <span>$24.990</span>
+
+            <button class="buy-btn add-cart">
+                Agregar al carrito
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+<section class="shop-section" id="moda">
+
+    <div class="categoria-btn" href="#moda">
+
+        <span>MODA CANINA</span>
+
+        <h2>Ropa y Accesorios</h2>
+
+        <p>
+            Diseños exclusivos para tu mejor amigo.
+        </p>
+
+    </div>
+
+    <div class="shop-grid">
+
+        <div class="product-card">
+
+            <img src="images/poleron.png">
+
+            <h3>Polerón Pethouse</h3>
+
+            <p>Diseño premium.</p>
+
+            <span>$9.990</span>
+
+            <button class="buy-btn add-cart">
+                Agregar al carrito
+            </button>
+
+        </div>
+
+        <div class="product-card">
+
+            <img src="images/bandana.jpg">
+
+            <h3>Bandana Premium</h3>
+
+            <p>Edición especial.</p>
+
+            <span>$4.990</span>
+
+            <button class="buy-btn add-cart">
+                Agregar al carrito
+            </button>
+
+        </div>
+
+        <div class="product-card">
+
+            <img src="images/arnes.png">
+
+            <h3>Arnés Premium</h3>
+
+            <p>Seguridad y comodidad.</p>
+
+            <span>$14.990</span>
+
+            <button class="buy-btn add-cart">
+                Agregar al carrito
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ========================= -->
+  <!-- CTA -->
+  <!-- ========================= -->
+
+  <section class="cta reveal">
+
+    <h2>
+      Dale a tu mascota la experiencia premium que merece
+    </h2>
+
+    <p>
+      Reserva hoy y descubre por qué somos la mejor experiencia
+      para perros en la ciudad.
+    </p>
+
+    <button class="btn">
+      Agendar Servicio
+    </button>
+
+  </section>
+
+  <!-- ========================= -->
+  <!-- CONTACT -->
+  <!-- ========================= -->
+
+  <section class="contact" id="contacto">
+
+    <div class="contact-container">
+
+      <div class="contact-info reveal">
+
+        <h2>
+          Reserva ahora
+        </h2>
+
+        <p>
+          Estamos listos para cuidar a tu mejor amigo.
+        </p>
+
+        <div class="info-box">
+
+          <div class="info-icon">📍</div>
+
+          <div>
+            <h4>Ubicación</h4>
+            <a href="https://maps.google.com/?q=Santiago,Chile"
+            target="_blank" class="contact-link">
+            📍 Santiago, Chile</a>
+          </div>
+
+        </div>
+
+        <div class="info-box">
+
+          <div class="info-icon">📞</div>
+
+          <div>
+            <h4>Teléfono</h4>
+            <a href="https://wa.me/56912345678"
+            target="_blank"
+            class="contact-link">
+            📱 +56 9 1234 5678</a>
+          </div>
+
+        </div>
+
+        <div class="info-box">
+
+          <div class="info-icon">✉️</div>
+
+          <div>
+            <h4>Email</h4>
+            <a href="mailto:antoniarojasbravo@colegionahuelcura.cl"
+            class="contact-link">
+            ✉️ contacto@pethouse.cl</a>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- FORM -->
+
+      <form class="contact-form reveal">
+
+        <div class="input-group">
+          <input type="text" placeholder="Nombre">
+        </div>
+
+        <div class="input-group">
+          <input type="email" placeholder="Correo">
+        </div>
+
+        <div class="input-group">
+          <input type="text" placeholder="Servicio">
+        </div>
+
+        <div class="input-group">
+          <textarea placeholder="Mensaje"></textarea>
+        </div>
+
+        <button class="btn">
+          Enviar Mensaje
+        </button>
+
+      </form>
+
+    </div>
+
+  </section>
+
+  <!-- ========================= -->
+  <!-- FOOTER -->
+  <!-- ========================= -->
+
+  <footer>
+
+    <h3>
+      Pethouse
+    </h3>
+
+    <p>
+      Guardería • Peluquería • Moda Canina Premium
+    </p>
+    <p>Diseñado por Antonia Rojas</p>
+
+    <p>
+      © 2026 Todos los derechos reservados.
+    </p>
+
+  </footer>
+
+  <!-- ========================= -->
+  <!-- JAVASCRIPT -->
+  <!-- ========================= -->
+
+  <script>
+
+    // SCROLL REVEAL
+
+    function reveal(){
+
+      let reveals = document.querySelectorAll('.reveal');
+
+      for(let i = 0; i < reveals.length; i++){
+
+        let windowHeight = window.innerHeight;
+
+        let revealTop =
+        reveals[i].getBoundingClientRect().top;
+
+        let revealPoint = 120;
+
+        if(revealTop < windowHeight - revealPoint){
+
+          reveals[i].classList.add('active');
+
+        }
+
+      }
+
+    }
+
+    window.addEventListener('scroll', reveal);
+
+    reveal();
+
+    // BUTTON ANIMATION
+
+    const buttons = document.querySelectorAll('.btn');
+
+    buttons.forEach(button => {
+
+      button.addEventListener('mouseenter', () => {
+
+        button.style.transform =
+        'translateY(-6px) scale(1.05)';
+
+      });
+
+      button.addEventListener('mouseleave', () => {
+
+        button.style.transform =
+        'translateY(0px) scale(1)';
+
+      });
+
+    });
+
+    // PARALLAX EFFECT
+
+    document.addEventListener('mousemove', (e) => {
+
+      const image =
+      document.querySelector('.hero-image img');
+
+      let x =
+      (window.innerWidth / 2 - e.pageX) / 40;
+
+      let y =
+      (window.innerHeight / 2 - e.pageY) / 40;
+
+      image.style.transform =
+      `translate(${x}px, ${y}px)`;
+
+    });
+
+    // NAVBAR SHADOW
+
+    window.addEventListener('scroll', () => {
+
+      const header = document.querySelector('header');
+
+      if(window.scrollY > 50){
+
+        header.style.boxShadow =
+        '0 10px 30px rgba(0,0,0,.08)';
+
+      }else{
+
+        header.style.boxShadow = 'none';
+
+      }
+
+    });
+
+  </script>
+
+</body>
+</html>
